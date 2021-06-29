@@ -1,0 +1,137 @@
+{% extends 'ielts/base_ielts.html' %}
+
+{% block block_ielts %}
+
+<div class="col-md-12">
+    <div class="row" style="padding-top:30px;margin:0px;">
+    <div class="col-md-12">
+      <div class="col-sm-12">
+        <div class="container" style="background-color:white;border-top:5px #6b1cb5 solid;border-radius:10px;padding-top:10px;">
+          <div class="row">
+            <div class="col-sm-12" style="padding:10px 30px 30px 30px;">
+            <div class="h4" style="text-align:center">
+              <b>INTRODUCTION</b>
+              <hr>
+            </div>
+                <div style="font-size:19px;">
+                    {{test.introduction|safe}}
+                </div>
+            </div>
+            </div>
+            </div>
+            <div class="container" style="background-color:white;border-top:5px #6b1cb5 solid;border-radius:10px;margin-top:30px;">
+            <div class="row">
+            <div class="col-sm-12" style="">
+            <div style="font-size:19px;">
+    <br>		<div class="h4" style="text-align:center">
+              <b>HOW TO PRACTICE</b>
+              <hr>
+            </div>
+                {{test.how_to_practice|safe}}
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="container" style="background-color:white;border-top:5px #6b1cb5 solid;border-radius:10px;margin-top:30px;">
+            <div class="row">
+            <div class="col-sm-12" style="">
+            <div style="font-size:19px;padding-top:20px;">
+            <h2 style="text-align:center;">IELTS Speaking Part 1</h2>
+            <h3 style="text-align:center">Test Series</h3>
+                <br>
+                <div class="row">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-5" style="text-size:5px!important;">
+                  Your Progress
+                </div>
+                <div class="col-sm-5" style="text-size:5px!important;text-align:right;">
+                  10%
+                </div>
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-10">
+                <div id="myProgress" title="Your Progress">
+                  <div id="myBar" title="Completed"></div>
+                </div>
+                </div>
+                <div class="col-sm-1">
+                </div>
+                </div>
+    
+              </div>
+              
+              <br>
+              <div id="accordion">
+                  {% for testmodule in testmodules %}
+              <div class="card">
+                <div class="card-header" id="headingOne_{{ testmodule.id }}">
+                  <div class="mb-0 row">
+                    <div class="col-sm-7">
+                    <a class="collapsed" data-toggle="collapse" data-target="#collapseOne_{{ testmodule.id }}" aria-expanded="false" aria-controls="collapseOne_{{ testmodule.id }}" href="#">
+                        {{testmodule.name}}
+                    </a>
+                    </div>
+                    <div class="col-sm-5"style="text-align:right;">
+                    <i class="fa fa-check-circle" style="color:#6b1cb5;"></i>
+                    <i class="fa fa-user-circle-o" style="color:#6b1cb5;" aria-hidden="true"></i>
+                    <span style="font-size:15px;">1092 Users</span>
+                    <a href="{% url 'test_module_answer' test.mid testmodule.id %}" class="btn btn-sm btn-primary">
+                      Take Test
+                    </a>
+                    <a class="collapsed" data-toggle="collapse" data-target="#collapseOne_{{ testmodule.id }}" aria-expanded="false" aria-controls="collapseOne_{{ testmodule.id }}" style="text-align:right">
+                    &nbsp;&nbsp;
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </a>
+                    </div>
+                  </div>
+                </div>
+    
+                <div id="collapseOne_{{ testmodule.id }}" class="collapse" aria-labelledby="headingOne_{{tesmodule.id}}" data-parent="#accordion">
+                  <div class="card-body row">
+                    <div class="col-sm-6">
+                        <a href="{% url 'ielts_result' testmodule.name %}">result</a>
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#questionHistory">Attempt 1</a>
+
+                 </div>
+                    <div class="col-sm-3">
+                      <p style="text-align:right">Band Score 5.5</p>
+                    </div>
+                    <div class="col-sm-3">
+                      <p style="text-align:right">Percentile 60</p>
+                    </div>
+                    <div class="col-sm-6">
+                      <a class="nav-link" href="#" data-toggle="modal" data-target="#questionHistory">Attempt 2</a>
+                    </div>
+                    <div class="col-sm-3">
+                      <p style="text-align:right">Band Score 5.5</p>
+                    </div>
+                    <div class="col-sm-3">
+                      <p style="text-align:right">Percentile 60</p>
+                    </div>
+                    <div class="col-sm-12" >
+                      <a class="nav-link" href="#" data-toggle="modal" data-target="#questionHistory">View More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                  {% endfor %}
+
+          <div class="row">
+            
+          </div>
+          <div class="row" style="max-height:70vh;overflow:auto;margin:0px;padding-bottom:5px;">
+          </div>
+        </div>
+        <br>
+          </div>
+        <br>
+    
+        </div>
+        </div>
+        </div>
+        <br>
+
+{% endblock %}

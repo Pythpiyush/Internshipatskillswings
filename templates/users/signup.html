@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div style="background-color:black;color:white;padding:10px;">
+    <div class="h3">
+      Register
+    </div>
+  </div>
+  <br>
+  <div class="container" style="color:white;border:1px white solid; border-radius:5px;padding:10px;">
+    <div class="row" style="padding:10px">
+      <form class="col-sm-12" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  <br>
+</body>
+
+{% endblock content %}

@@ -1,0 +1,744 @@
+{% extends 'baseIndex.html' %}
+
+{% block baseindex %}
+
+<div style="background-color:#0e0274;" class="">
+	<div class="row" style="margin:0px 0px 20px 0px;">
+	  <div class="col-sm-12" style="padding:0px 20px 0px 20px; text-align:center;color:white">
+		<br>
+		<h2>
+		  Test Evaluation Result
+		</h2>
+		<div class="h3">
+		  Question 1- Work
+		</div>
+	  </div>
+	</div>
+	<div class="row" style="margin:0px;margin-bottom:30px;">
+	  <div class="col-sm-1">
+	  </div>
+	  <div class="col-lg-5" style="padding:10px 60px 10px 60px;">
+		<div class="custom-card" style="margin:0px 30px 0px 30px">
+		  <div class="custom-card-header">
+			<div class="h4">
+			  Band Score
+			</div>
+		  </div>
+		  <div class="h2 custom-card-body">
+		    <b>6.5</b>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-lg-5" style="padding:10px 60px 10px 60px;">
+		<div class="custom-card" style="margin:0px 30px 0px 30px">
+		  <div class="custom-card-header">
+			<div class="h4">
+			  Percentile
+			</div>
+		  </div>
+		  <div class="h2 custom-card-body">
+		    <b>65</b>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<div class="row" style="margin:0px;margin-bottom:30px;">
+	  <div class="col-lg-3 col-6" style="">
+		<div class="testing row" style="position: relative;">
+		  <div class="col-6">
+		    <div id="fac">
+			</div>
+		  </div>
+		  <div class="col-6" style="margin:auto">
+		  <div class="h2">
+		    <b>6.5</b>
+		  </div>
+			<b>Fluency & Coherence</b>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-lg-3 col-6" style="">
+		<div class="testing row" style="position: relative;">
+		  <div class="col-6">
+		    <div id="lr">
+			</div>
+		  </div>
+		  <div class="col-6" style="margin:auto">
+		  <div class="h2">
+		    <b>6.5</b>
+		  </div>
+			  <b>Lexical Resources</b>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-lg-3 col-6" style="">
+		<div class="testing row" style="position: relative;">
+		  <div class="col-6">
+		    <div id="gram">
+			</div>
+		  </div>
+		  <div class="col-6" style="margin:auto">
+		  <div class="h2">
+		    <b>6.5</b>
+		  </div>
+			  <b>Grammar</b>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-lg-3 col-6" style="">
+		<div class="testing row" style="position: relative;">
+		  <div class="col-6">
+		    <div id="pro">
+			</div>
+		  </div>
+		  <div class="col-6" style="margin:auto">
+		  <div class="h2">
+		    <b>6.5</b>
+		  </div>
+			  <b>Pronunciation</b>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<div class="row" id="overallChart" style="margin:10px;">
+	  <div class="col-md-8" style="padding:10px;">
+		<div style="border:#bbbbbb thin solid;padding:10px;background-color:white;border-radius:10px 5px 5px 10px;">
+		  <div id="columnchart_values">
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-md-4" style="padding:10px;">
+		<div style="border:#bbbbbb thin solid;padding:10px;background-color:white;border-radius:5px 10px 10px 5px;">
+		  <div id="donutchart" style="width: 100%;height:400px"></div>
+		</div>
+	  </div>
+	</div>
+	<div class="row" style="margin:10px;background-color:white;border-radius:10px;padding:20px;border:thin solid #bbbbbb;">
+	  <div class="col-sm-12" style="">
+	    <h3 style="text-align:center">
+		  <b>Detailed Result</b>
+		</h3>
+	  </div>
+	</div>
+	<div class="row" style="margin:0px;">
+	  <div class="col-md-9">
+		<div style="background-color:white;border-radius:10px;padding:20px;border:thin solid #bbbbbb; margin-top:10px;">
+		  <h5>
+		    <b>
+			  Q1 Give your introduction.
+			</b>
+		  </h5>
+		  <div style="position:relative; margin:0px auto; text-align:center">
+		    <audio controls style="border-color:thin black solid">
+			  <source src="" type="audio/mpeg">
+			</audio>
+		  </div>
+		  <br>
+		  <div class="row">
+		    <div class="cust-col-2-10" style="position:relative; margin:0px auto; text-align:center">
+			  <b>Band Score</b>
+			  <br>
+			  <h5>6.2</h5>
+			</div>
+		    <div class="cust-col-2-5" style="position:relative; margin:0px auto; text-align:center">
+			  <b>Fluency & Coherence</b>
+			  <br>
+			  <h5>6.2</h5>
+			</div>
+		    <div class="cust-col-2-5" style="position:relative; margin:0px auto; text-align:center">
+			  <b>Lexical Resources</b>
+			  <br>
+			  <h5>6.2</h5>
+			</div>
+		    <div class="cust-col-2-5" style="position:relative; margin:0px auto; text-align:center">
+			  <b>Grammar</b>
+			  <br>
+			  <h5>6.2</h5>
+			</div>
+		    <div class="cust-col-2-5" style="position:relative; margin:0px auto; text-align:center">
+			  <b>Pronunciation</b>
+			  <br>
+			  <h5>6.2</h5>
+			</div>
+		  </div>
+		</div>
+		<div style="background-color:white;border-radius:10px;padding:20px;border:thin solid #bbbbbb; margin-top:10px;">
+		  <h5>
+		    <b>
+			  Q1 Give your introduction.
+			</b>
+		  </h5>
+		  <div style="position:relative; margin:0px auto; text-align:center">
+		    <audio controls>
+			  <source src="C:\Users\rishabh.sarda\Downloads\Sakhiyaan.mp3" type="audio/mpeg">
+			</audio>
+		  </div>
+		  <br>
+		  <div class="row">
+		    <div class="col-md-3" style="position:relative; margin:0px auto; text-align:center">
+			  <b>Fluency & Coherence</b>
+			  <br>
+			  <h5>6.2</h5>
+			</div>
+		    <div class="col-md-3" style="position:relative; margin:0px auto; text-align:center">
+			  <b>Lexical Resources</b>
+			  <br>
+			  <h5>6.2</h5>
+			</div>
+		    <div class="col-md-3" style="position:relative; margin:0px auto; text-align:center">
+			  <b>Grammar</b>
+			  <br>
+			  <h5>6.2</h5>
+			</div>
+		    <div class="col-md-3" style="position:relative; margin:0px auto; text-align:center">
+			  <b>Pronunciation</b>
+			  <br>
+			  <h5>6.2</h5>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-md-3" style="margin-top:10px;">
+		<div class="h3" style="text-align:center;padding-bottom:10px;text-shadow: 3px 3px 1px #847ad6;color:white">
+		  <b>Suggestion</b>
+		</div>
+	    <div class="testing top-border" >
+		  Suggestion1
+		</div>
+		<br>
+		<div class="testing top-border" >
+		  Suggestion2
+		</div>
+	  </div>
+	  </div>
+
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="assets/scripts/main.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+/*		chartArea: {
+			width: 400,
+			height: 400,
+		},*/
+		pieSliceText:'none',
+		pieSliceTextStyle: {
+            color: 'black',
+        },
+
+          title: 'My Daily Activities',
+          pieHole: 0.7,
+		  fontSize: 15
+        };
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+
+	  google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChartBar);
+    function drawChartBar() {
+      var data = google.visualization.arrayToDataTable([
+        ["Criteria", "Band", { role: "style" } ],
+        ["Fluency & Coherence", 8, "color:#109618"],
+        ["Lexical Resources", 5.5, "color:#990099"],
+        ["grammer", 6.5, "color:#3366cc"],
+        ["Pronunciation", 8.5, "color: rgb(220, 57, 18);"]
+      ]);
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "You Score Division",
+		titleTextStyle:
+		{
+			fontSize:30,
+			color:'#0e0274'
+		},
+        height: 400,
+        bar: {groupWidth: "30%"},
+        legend: { position: "none" },
+			vAxis: {
+				title: 'Band',
+				viewWindowMode:'explicit',
+					viewWindow: {
+						max:9,
+						min:0
+					}
+			},
+			hAxis : {
+				title:'Parameter'
+				/*textStyle : {
+					fontSize: 20 // or the number you want
+				}*/
+			}
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
+
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart2);
+	  var  parentWidth=document.getElementById("fac").clientWidth;
+      function drawChart2() {
+	  var programmaticSlider = new google.visualization.ControlWrapper({
+          'controlType': 'NumberRangeFilter',
+          'containerId': 'programmatic_control_div',
+          'options': {
+            'filterColumnLabel': 'Donuts eaten',
+            'ui': {'labelStacking': 'vertical'}
+          }
+        });
+        var data = google.visualization.arrayToDataTable([
+          ['Task', ''],
+          ['FAC',     11],
+          ['nFAC',      2],
+        ]);
+
+        var options = {
+		pieSliceText:'none',
+		'legend': 'none',
+		pieSliceTextStyle: {
+            color: 'black',
+        },
+		'chartArea': {'left': 0, 'top': 0, 'right': 0, 'bottom': 0,width:100,height:100},
+          pieHole: 0.7,
+		  fontSize: 15,
+		  height:parentWidth,
+		  'tooltip' : {
+			trigger: 'none'
+		  }
+        };
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('fac'));
+        chart.draw(data, options);
+      }
+
+	  google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart3);
+	  var  parentWidth=document.getElementById("lr").clientWidth;
+      function drawChart3() {
+	  var programmaticSlider = new google.visualization.ControlWrapper({
+          'controlType': 'NumberRangeFilter',
+          'containerId': 'programmatic_control_div',
+          'options': {
+            'filterColumnLabel': 'Donuts eaten',
+            'ui': {'labelStacking': 'vertical'}
+          }
+        });
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+        ]);
+
+        var options = {
+		pieSliceText:'none',
+		'legend': 'none',
+		pieSliceTextStyle: {
+            color: 'black',
+        },
+		'chartArea': {'left': 0, 'top': 0, 'right': 0, 'bottom': 0,width:100,height:100},
+          pieHole: 0.7,
+		  fontSize: 15,
+		  height:parentWidth,
+		  'tooltip' : {
+			trigger: 'none'
+		  }
+        };
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('lr'));
+        chart.draw(data, options);
+      }
+
+	        google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart4);
+	  var  parentWidth=document.getElementById("gram").clientWidth;
+      function drawChart4() {
+	  var programmaticSlider = new google.visualization.ControlWrapper({
+          'controlType': 'NumberRangeFilter',
+          'containerId': 'programmatic_control_div',
+          'options': {
+            'filterColumnLabel': 'Donuts eaten',
+            'ui': {'labelStacking': 'vertical'}
+          }
+        });
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+        ]);
+
+        var options = {
+		pieSliceText:'none',
+		'legend': 'none',
+		pieSliceTextStyle: {
+            color: 'black',
+        },
+		'chartArea': {'left': 0, 'top': 0, 'right': 0, 'bottom': 0,width:100,height:100},
+          pieHole: 0.7,
+		  fontSize: 15,
+		  height:parentWidth,
+		  'tooltip' : {
+			trigger: 'none'
+		  }
+        };
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('gram'));
+        chart.draw(data, options);
+      }
+
+	  google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart5);
+	  var  parentWidth=document.getElementById("pro").clientWidth;
+      function drawChart5() {
+	  var programmaticSlider = new google.visualization.ControlWrapper({
+          'controlType': 'NumberRangeFilter',
+          'containerId': 'programmatic_control_div',
+          'options': {
+            'filterColumnLabel': 'Donuts eaten',
+            'ui': {'labelStacking': 'vertical'}
+          }
+        });
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+        ]);
+
+        var options = {
+		pieSliceText:'none',
+		'legend': 'none',
+		pieSliceTextStyle: {
+            color: 'black',
+        },
+		'chartArea': {'left': 0, 'top': 0, 'right': 0, 'bottom': 0,width:100,height:100},
+          pieHole: 0.7,
+		  fontSize: 15,
+		  height:parentWidth,
+		  'tooltip' : {
+			trigger: 'none'
+		  }
+        };
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('pro'));
+        chart.draw(data, options);
+      }
+
+
+/*      google.charts.load('current', {'packages':['corechart', 'controls']});
+      google.charts.setOnLoadCallback(drawStuff2);
+
+      function drawStuff2() {
+
+        var dashboard = new google.visualization.Dashboard(
+          document.getElementById('fac'));
+
+        // We omit "var" so that programmaticSlider is visible to changeRange.
+        var programmaticSlider = new google.visualization.ControlWrapper({
+		hAxis: { textPosition: 'none' },
+          'controlType': 'NumberRangeFilter',
+          'containerId': 'programmatic_control_div',
+          'options': {
+            'filterColumnLabel': 'Donuts eaten',
+            'ui': {'labelStacking': 'vertical'}
+          }
+        });
+
+        var programmaticChart  = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'programmatic_chart_div',
+          'options': {
+            'width': 300,
+            'height': 300,
+            'legend': 'none',
+            'chartArea': {'left': 15, 'top': 15, 'right': 0, 'bottom': 0},
+            'pieSliceText': 'value'
+          }
+        });
+
+        var data = google.visualization.arrayToDataTable([
+          ['Name', 'Donuts eaten'],
+          ['Michael' , 5],
+          ['Elisa', 7],
+          ['Robert', 3],
+          ['John', 2],
+          ['Jessica', 6],
+          ['Aaron', 1],
+          ['Margareth', 8]
+        ]);
+
+        dashboard.bind(programmaticSlider, programmaticChart);
+        dashboard.draw(data);
+		changeRange = function() {
+          programmaticSlider.setState({'lowValue': 6, 'highValue': 5});
+          programmaticSlider.draw();
+        };
+
+        changeOptions = function() {
+          programmaticChart.setOption('is3D', true);
+          programmaticChart.draw();
+        };
+}
+*/
+	function onResizeScreen()
+	{
+	    google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+/*		chartArea: {
+			width: 400,
+			height: 400,
+		},*/
+		pieSliceText:'none',
+		pieSliceTextStyle: {
+            color: 'black',
+        },
+
+          title: 'My Daily Activities',
+          pieHole: 0.7,
+		  fontSize: 15
+        };
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+
+	  google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChartBar);
+    function drawChartBar() {
+      var data = google.visualization.arrayToDataTable([
+        ["Criteria", "Band", { role: "style" } ],
+        ["Fluency & Coherence", 8, "color:#109618"],
+        ["Lexical Resources", 5.5, "color:#990099"],
+        ["grammer", 6.5, "color:#3366cc"],
+        ["Pronunciation", 8.5, "color: rgb(220, 57, 18);"]
+      ]);
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "You Score Division",
+		titleTextStyle:
+		{
+			fontSize:30,
+			color:'#0e0274'
+		},
+        height: 400,
+        bar: {groupWidth: "30%"},
+        legend: { position: "none" },
+			vAxis: {
+				title: 'Band',
+				viewWindowMode:'explicit',
+					viewWindow: {
+						max:9,
+						min:0
+					}
+			},
+			hAxis : {
+				title:'Parameter'
+				/*textStyle : {
+					fontSize: 20 // or the number you want
+				}*/
+			}
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
+
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart2);
+	  var  parentWidth=document.getElementById("fac").clientWidth;
+      function drawChart2() {
+	  var programmaticSlider = new google.visualization.ControlWrapper({
+          'controlType': 'NumberRangeFilter',
+          'containerId': 'programmatic_control_div',
+          'options': {
+            'filterColumnLabel': 'Donuts eaten',
+            'ui': {'labelStacking': 'vertical'}
+          }
+        });
+        var data = google.visualization.arrayToDataTable([
+          ['Task', ''],
+          ['FAC',     11],
+          ['nFAC',      2],
+        ]);
+
+        var options = {
+		pieSliceText:'none',
+		'legend': 'none',
+		pieSliceTextStyle: {
+            color: 'black',
+        },
+		'chartArea': {'left': 0, 'top': 0, 'right': 0, 'bottom': 0,width:100,height:100},
+          pieHole: 0.7,
+		  fontSize: 15,
+		  height:parentWidth,
+		  'tooltip' : {
+			trigger: 'none'
+		  }
+        };
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('fac'));
+        chart.draw(data, options);
+      }
+
+	  google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart3);
+	  var  parentWidth=document.getElementById("lr").clientWidth;
+      function drawChart3() {
+	  var programmaticSlider = new google.visualization.ControlWrapper({
+          'controlType': 'NumberRangeFilter',
+          'containerId': 'programmatic_control_div',
+          'options': {
+            'filterColumnLabel': 'Donuts eaten',
+            'ui': {'labelStacking': 'vertical'}
+          }
+        });
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+        ]);
+
+        var options = {
+		pieSliceText:'none',
+		'legend': 'none',
+		pieSliceTextStyle: {
+            color: 'black',
+        },
+		'chartArea': {'left': 0, 'top': 0, 'right': 0, 'bottom': 0,width:100,height:100},
+          pieHole: 0.7,
+		  fontSize: 15,
+		  height:parentWidth,
+		  'tooltip' : {
+			trigger: 'none'
+		  }
+        };
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('lr'));
+        chart.draw(data, options);
+      }
+
+	        google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart4);
+	  var  parentWidth=document.getElementById("gram").clientWidth;
+      function drawChart4() {
+	  var programmaticSlider = new google.visualization.ControlWrapper({
+          'controlType': 'NumberRangeFilter',
+          'containerId': 'programmatic_control_div',
+          'options': {
+            'filterColumnLabel': 'Donuts eaten',
+            'ui': {'labelStacking': 'vertical'}
+          }
+        });
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+        ]);
+
+        var options = {
+		pieSliceText:'none',
+		'legend': 'none',
+		pieSliceTextStyle: {
+            color: 'black',
+        },
+		'chartArea': {'left': 0, 'top': 0, 'right': 0, 'bottom': 0,width:100,height:100},
+          pieHole: 0.7,
+		  fontSize: 15,
+		  height:parentWidth,
+		  'tooltip' : {
+			trigger: 'none'
+		  }
+        };
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('gram'));
+        chart.draw(data, options);
+      }
+
+	  google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart5);
+	  var  parentWidth=document.getElementById("pro").clientWidth;
+      function drawChart5() {
+	  var programmaticSlider = new google.visualization.ControlWrapper({
+          'controlType': 'NumberRangeFilter',
+          'containerId': 'programmatic_control_div',
+          'options': {
+            'filterColumnLabel': 'Donuts eaten',
+            'ui': {'labelStacking': 'vertical'}
+          }
+        });
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+        ]);
+
+        var options = {
+		pieSliceText:'none',
+		'legend': 'none',
+		pieSliceTextStyle: {
+            color: 'black',
+        },
+		'chartArea': {'left': 0, 'top': 0, 'right': 0, 'bottom': 0,width:100,height:100},
+          pieHole: 0.7,
+		  fontSize: 15,
+		  height:parentWidth,
+		  'tooltip' : {
+			trigger: 'none'
+		  }
+        };
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('pro'));
+        chart.draw(data, options);
+      }
+	}
+
+  </script>
+
+{% endblock baseindex %}

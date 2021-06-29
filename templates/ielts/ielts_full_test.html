@@ -1,0 +1,221 @@
+{% extends 'ielts/base_ielts.html' %}
+
+{% block block_ielts %}
+
+
+
+
+	<div class="">
+	<div class="row" style="padding-top:30px;margin:0px;font-size:19px;">
+	<div class="col-md-9">
+	  <div class="col-sm-12">
+		<div class="container" style="background-color:white;border:1px white solid;border-radius:10px;padding-top:10px;border-top:5px #6b1cb5 solid;">
+		  <div class="row" style="text-align:center;padding-top:10px;">
+			<div class="col-sm-12">
+			  <div class="h3">
+			    What to Expect
+			  </div>
+			</div>
+		  </div>
+		  <div class="row">
+		    <div class="col-sm-12">
+			  <h4>Format</h4>
+			  <ul>
+				<li>The Speaking module lasts for 11-14 minutes and consists of an introduction section plus three parts.</li>
+				<li>The Speaking module is the same for both the Academic and General Training verisons of the Test.</li>
+				<li>The linguistic challenge of the test increases with each part.</li>
+			  </ul>
+			  <br>
+			  <table class="table table-bordered">
+				<thead class="table-dark" style="background-color:#6b1cb5">
+				  <tr>
+					<th>
+					  Part
+					</th>
+					<th>
+					  Timing
+					</th>
+					<th>
+					  Content
+					</th>
+				  </tr>
+				</thead>
+				<tbody class="table-striped">
+				  <tr>
+					<th>
+					  Introduction
+					</th>
+					<td>
+					  30 Seconds
+					</td>
+					<td>
+					  Name, Nationality, ID check.
+					</td>
+				  </tr>
+				  <tr>
+					<th>
+					  Part 1: Interview
+					</th>
+					<td>
+					  4-5 minutes
+					</td>
+					<td>
+					  2 or 3 unrelated and short, simple conversations about your personal preferences or experience.
+					</td>
+				  </tr>
+				  <tr>
+					<th>
+					  Part 2: Long Turn
+					</th>
+					<td>
+					  3-4 minutes
+					</td>
+					<td>
+					  1 minute of preparation time. 1-2 minute talk, on a topic which draws on your personal experience. There may be one or two follow-up questions.
+					</td>
+				  </tr>
+				  <tr>
+					<th>
+					  Part 3: Discussion
+					</th>
+					<td>
+					  4-5 minutes
+					</td>
+					<td>
+					  A more detailed discussion related to the topic of the long turn in part 2.
+					</td>
+				  </tr>
+				</tbody>
+			  </table>
+			</div>
+		  </div>
+		</div>
+	  </div>
+  <br>
+  <div class="col-sm-12">
+	<div class="container" style="background-color:white;border:1px white solid;border-radius:10px;padding-top:10px;border-top:5px #6b1cb5 solid;">
+	  <div class="row" style="text-align:center;padding-top:10px;">
+		<div class="col-sm-12">
+		  <div class="h3">
+			  {{fulltest.name}}
+		  </div>
+		</div>
+	  </div>
+	  <div class="row" style="max-height:70vh;overflow:auto;margin:0px;padding-bottom:5px;">
+
+		  {% for fullmodule in fulltestmodules %}
+		<div class="col-lg-4">
+		<div class="moduleContainer">
+		  <div style="" class="module-header">
+			  {{fullmodule.name}}
+		  </div>
+		  <br>
+		  <div class="module-text">
+		    <p>
+			  Complete(0/1)
+			</p>
+
+			  <a href="{% url 'fulltest_module_answer' fulltest.fid fullmodule.id %}" class="btn btn-sm btn-primary">
+                      Take Test
+			  </a>
+			<br>
+			<br>
+		  </div>
+		  </div>
+		</div>
+		  {% endfor %}
+
+	  </div>
+	</div>
+	<br>
+	  </div>
+	<br>
+
+	</div>
+	<div class="col-md-3">
+		<div class="paymentContainer" style="">
+		  <div style="text-align:center;" class="payment-header">
+			<div class="h3">
+			  Pay and Unlock
+			</div>
+		  </div>
+		  <br>
+		  <div class="module-text" style="border-radius:0px 0px 5px 5px;">
+			<div class="row">
+			  <div class="col-sm-6">
+				{{course.name}} Fee:
+			  </div>
+			  <div class="col-sm-6" style="text-align:right">
+				1200
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-sm-6">
+				Discount:
+			  </div>
+			  <div class="col-sm-6" style="text-align:right">
+				1200
+			  </div>
+			</div>
+			<hr>
+			<div class="row">
+			  <div class="col-sm-6">
+				<b>Grand Total:	</b>
+			  </div>
+			  <div class="col-sm-6" style="text-align:right">
+				<b>1200</b>
+			  </div>
+			</div>
+			<br>
+		  </div>
+		</div>
+		<br>
+
+	  <div class="container" style="background-color:white;border:1px white solid; border-radius:10px;padding:10px;box-shadow: 1px 1px 10px rgba(0,0,0,.3);">
+		<div class="row">
+		  <div class="col-sm-12 text-center">
+			<div class="col-sm-12">
+				<span class="h3"><i class="fa fa-bolt" aria-hidden="true"></i> Streek</span>
+				<span style="text-align:right;"><i class="fa fa-info-circle info-icon" title="No of days worked"></i></span>
+			</div>
+			<div class="col-sm-12">
+				<div style="background-color:#6b1cb5;color:white; border-radius:5px; padding:10px;">
+					<b>2 Days</b>
+				</div>
+			</div>
+
+		</div>
+		  <!--<div id="completed"></div>
+		  </div>
+			<div id="center">
+				<font style="color:red;font-weight: bold;font: 18px arial, sans-serif;">$186,000,000</font>
+				<BR>
+				<font style="color:grey;font: 14px arial, sans-serif;">92% to Target</font></div>
+			</div>
+		  </div>-->
+	  </div></div>
+	  <br>
+	  <div class="container" style="background-color:white;border:1px white solid; border-radius:10px;padding:10px; text-align:center;box-shadow: 1px 1px 10px rgba(0,0,0,.3);">
+		<div class="row">
+		  <div class="col-sm-12 h3">
+		    Result
+		  </div>
+		  <div class="col-sm-12">
+		    40%
+		  </div>
+		  <div class="col-sm-12">
+			<button class="btn btn-light" onclick="window.location='overallResult.html'" style="background-color:#6b1cb5;color:white">
+			  Overall Result
+			</button>
+		  </div>
+		</div>
+	  </div>
+	  <br>
+	</div>
+	</div>
+	</>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SkillSwings</title>
+	<link href="assets/img/logo.jpeg" rel="icon">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link href="assets/css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+
+	  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="#">SkillSwings</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			  <li class="nav-item active">
+				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">Link</a>
+			  </li>
+			  <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  Dropdown
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				  <a class="dropdown-item" href="#">Action</a>
+				  <a class="dropdown-item" href="#">Another action</a>
+				  <div class="dropdown-divider"></div>
+				  <a class="dropdown-item" href="#">Something else here</a>
+				</div>
+			  </li>
+			  <li class="nav-item">
+				<!--<a class="nav-link disabled" href="#">Disabled</a>-->
+			  </li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+			  <ul class="navbar-nav mr-auto">
+				<!--<li class="nav-item">
+				  <input class="form-control mr-sm-2" type="search" placeholder="Courses" aria-label="Courses">
+				</li>-->
+			    <li class="nav-item">
+				  <a class="nav-link" href="profile.html"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
+				</li>
+			    <li class="nav-item">
+				  <a class="nav-link"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+				</li>
+			    <li class="nav-item">
+				  <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user" aria-hidden="true"></i> Login</a>
+				</li>
+			    <li class="nav-item">
+				  <a class="nav-link" href="#" data-toggle="modal" data-target="#registerModal"><i class="fa fa-edit" aria-hidden="true"></i> Register</a>
+				</li>
+				<!--<li class="nav-item">
+				  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				</li>-->
+			  </ul>
+			</form>
+		  </div>
+		</nav>
+	</header>
+	<div style="background-color:black; color:white;padding:10px; height:60vh;">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-sm-9">
+			<br>
+			<div style="color:blue;">
+				><a href="courses.html"> COURSES</a>
+			</div>
+			<br>
+			<div class="h2" style="margin:5px;">
+			  {{course.name}}
+			</div>
+			<div>
+			  Check your IELTS skills here 
+			</div>
+			<br>
+			<div>
+			  <button class="btn" style="color:white;border-color:white">
+				Pay and unlock
+			  </button>
+			</div>
+		  </div>
+		  <div class="col-sm-3">
+			<img src="assets/img/logo.jpeg" class="img-fluid"/>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<br>
+	<div class="">
+	<div class="row" style="padding-top:30px;margin:0px;font-size:19px;">
+	<div class="col-md-9">
+	  <div class="col-sm-12">
+		<div class="container" style="background-color:white;border:1px white solid;border-radius:10px;padding-top:10px;border-top:5px #6b1cb5 solid;">
+		  <div class="row" style="text-align:center;padding-top:10px;">
+			<div class="col-sm-12">
+			  <div class="h3">
+			    What to Expect
+			  </div>
+			</div>
+		  </div>
+		  <div class="row">
+		    <div class="col-sm-12">
+			  <h4>Format</h4>
+			  <ul>
+				<li>The Speaking module lasts for 11-14 minutes and consists of an introduction section plus three parts.</li>
+				<li>The Speaking module is the same for both the Academic and General Training verisons of the Test.</li>
+				<li>The linguistic challenge of the test increases with each part.</li>
+			  </ul>
+			  <br>
+			  <table class="table table-bordered">
+				<thead class="table-dark" style="background-color:#6b1cb5">
+				  <tr>
+					<th>
+					  Part
+					</th>
+					<th>
+					  Timing
+					</th>
+					<th>
+					  Content
+					</th>
+				  </tr>
+				</thead>
+				<tbody class="table-striped">
+				  <tr>
+					<th>
+					  Introduction
+					</th>
+					<td>
+					  30 Seconds
+					</td>
+					<td>
+					  Name, Nationality, ID check.
+					</td>
+				  </tr>
+				  <tr>
+					<th>
+					  Part 1: Interview
+					</th>
+					<td>
+					  4-5 minutes
+					</td>
+					<td>
+					  2 or 3 unrelated and short, simple conversations about your personal preferences or experience.
+					</td>
+				  </tr>
+				  <tr>
+					<th>
+					  Part 2: Long Turn
+					</th>
+					<td>
+					  3-4 minutes
+					</td>
+					<td>
+					  1 minute of preparation time. 1-2 minute talk, on a topic which draws on your personal experience. There may be one or two follow-up questions.
+					</td>
+				  </tr>
+				  <tr>
+					<th>
+					  Part 3: Discussion
+					</th>
+					<td>
+					  4-5 minutes
+					</td>
+					<td>
+					  A more detailed discussion related to the topic of the long turn in part 2.
+					</td>
+				  </tr>
+				</tbody>
+			  </table>
+			</div>
+		  </div>
+		</div>
+	  </div>
+  <br>
+  <div class="col-sm-12">
+	<div class="container" style="background-color:white;border:1px white solid;border-radius:10px;padding-top:10px;border-top:5px #6b1cb5 solid;">
+	  <div class="row" style="text-align:center;padding-top:10px;">
+		<div class="col-sm-12">
+		  <div class="h3">
+			  {{fulltest.name}}
+		  </div>
+		</div>
+	  </div>
+	  <div class="row" style="max-height:70vh;overflow:auto;margin:0px;padding-bottom:5px;">
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		<div class="module-text">-->
+<!--		    <p>Percentile 99  Band Score 6.9</p>-->
+<!--			-->
+<!--    -->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'" style="margin-right:20px;width:100px">-->
+<!--			  View Result-->
+<!--			</button><button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'" style="width:100px">-->
+<!--			  Start Now-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		<div class="module-text">-->
+<!--		    <pre>Percentile -   Band Score -</pre>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'" style="width:100px">-->
+<!--			  Start Now-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		<div class="module-text">-->
+<!--		    <pre>Percentile -   Band Score -</pre>-->
+<!--			-->
+<!--    -->
+<!--		<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'" style="width:100px">-->
+<!--			  Start Now-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>		  </div>-->
+<!--		</div>-->
+		  {% for fullmodule in fulltestmodules %}
+		<div class="col-lg-4">
+		<div class="moduleContainer">
+		  <div style="" class="module-header">
+			  {{fullmodule.name}}
+		  </div>
+		  <br>
+		  <div class="module-text">
+		    <p>
+			  Complete(0/1)
+			</p>
+			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">
+			  View Details
+			</button>
+			<br>
+			<br>
+		  </div>
+		  </div>
+		</div>
+		  {% endfor %}
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p>-->
+<!--			  Complete(0/1)-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p>-->
+<!--			  Complete(0/1)-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p>-->
+<!--			  Complete(0/1)-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p>-->
+<!--			  Complete(0/1)-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p>-->
+<!--			  Complete(0/1)-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p>-->
+<!--			  Complete(0/1)-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p>-->
+<!--			  Complete(0/1)-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p>-->
+<!--			  Complete(0/1)-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p>-->
+<!--			  Complete(0/1)-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p>-->
+<!--			  Complete(0/1)-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p>-->
+<!--			  Complete(0/1)-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p>-->
+<!--			  Complete(0/1)-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p>-->
+<!--			  Complete(0/1)-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p>-->
+<!--			  Complete(0/1)-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			Speaking Test 1-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p>-->
+<!--			  Complete(0/1)-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			What is IELTS About?-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p>-->
+<!--			  Complete(0/1)-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-lg-4">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="" class="module-header">-->
+<!--			What is IELTS About?-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p>-->
+<!--			  Complete(0/1)-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+	  </div>
+	</div>
+	<br>
+	  </div>
+	<br>
+
+	</div>
+	<div class="col-md-3">
+		<div class="paymentContainer" style="">
+		  <div style="text-align:center;" class="payment-header">
+			<div class="h3">
+			  Pay and Unlock
+			</div>
+		  </div>
+		  <br>
+		  <div class="module-text" style="border-radius:0px 0px 5px 5px;">
+			<div class="row">
+			  <div class="col-sm-6">
+				{{course.name}} Fee:
+			  </div>
+			  <div class="col-sm-6" style="text-align:right">
+				1200
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-sm-6">
+				Discount:
+			  </div>
+			  <div class="col-sm-6" style="text-align:right">
+				1200
+			  </div>
+			</div>
+			<hr>
+			<div class="row">
+			  <div class="col-sm-6">
+				<b>Grand Total:	</b>
+			  </div>
+			  <div class="col-sm-6" style="text-align:right">
+				<b>1200</b>
+			  </div>
+			</div>
+			<br>
+		  </div>
+		</div>
+		<br>
+	  <!-- <div class="container" style="border:1px white solid; border-radius:10px;padding:10px;background-color:white;"> -->
+		<!-- <div class="row"> -->
+		  <!-- <div class="col-sm-12 h4" style="text-align:center;"> -->
+		    <!-- Pay and Unlock -->
+		  <!-- </div> -->
+		<!-- </div> -->
+		<!-- <hr> -->
+		<!-- <div class="row"> -->
+		  <!-- <div class="col-sm-6"> -->
+			<!-- IELTS Fee: -->
+		  <!-- </div> -->
+		  <!-- <div class="col-sm-6" style="text-align:right"> -->
+		    <!-- 1200 -->
+		  <!-- </div> -->
+		<!-- </div> -->
+		<!-- <div class="row"> -->
+		  <!-- <div class="col-sm-6"> -->
+			<!-- IELTS Fee: -->
+		  <!-- </div> -->
+		  <!-- <div class="col-sm-6" style="text-align:right"> -->
+		    <!-- 1200 -->
+		  <!-- </div> -->
+		<!-- </div> -->
+		<!-- <hr> -->
+		<!-- <div class="row"> -->
+		  <!-- <div class="col-sm-6"> -->
+			<!-- <b>Grand Total:</b> -->
+		  <!-- </div> -->
+		  <!-- <div class="col-sm-6" style="text-align:right"> -->
+		    <!-- <b>1200</b> -->
+		  <!-- </div> -->
+		<!-- </div> -->
+	  <!-- </div> -->
+	  <!-- <br> -->
+	  <div class="container" style="background-color:white;border:1px white solid; border-radius:10px;padding:10px;box-shadow: 1px 1px 10px rgba(0,0,0,.3);">
+		<div class="row">
+		  <div class="col-sm-12 text-center">
+			<div class="col-sm-12">
+				<span class="h3"><i class="fa fa-bolt" aria-hidden="true"></i> Streek</span>
+				<span style="text-align:right;"><i class="fa fa-info-circle info-icon" title="No of days worked"></i></span>
+			</div>
+			<div class="col-sm-12">
+				<div style="background-color:#6b1cb5;color:white; border-radius:5px; padding:10px;">
+					<b>2 Days</b>
+				</div>
+			</div>
+
+		</div>
+		  <!--<div id="completed"></div>
+		  </div>
+			<div id="center">
+				<font style="color:red;font-weight: bold;font: 18px arial, sans-serif;">$186,000,000</font>
+				<BR>
+				<font style="color:grey;font: 14px arial, sans-serif;">92% to Target</font></div>
+			</div>
+		  </div>-->
+	  </div></div>
+	  <br>
+	  <div class="container" style="background-color:white;border:1px white solid; border-radius:10px;padding:10px; text-align:center;box-shadow: 1px 1px 10px rgba(0,0,0,.3);">
+		<div class="row">
+		  <div class="col-sm-12 h3">
+		    Result
+		  </div>
+		  <div class="col-sm-12">
+		    40%
+		  </div>
+		  <div class="col-sm-12">
+			<button class="btn btn-light" onclick="window.location='overallResult.html'" style="background-color:#6b1cb5;color:white">
+			  Overall Result
+			</button>
+		  </div>
+		</div>
+	  </div>
+	  <br>
+	</div>
+	</div>
+	</div>
+	<br>
+  </body>
+  	<!------------------------login modal------------------------------>
+	<div id="loginModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog modal-dialog-centered">
+
+		<!-- Modal content-->
+		<div class="modal-content" id="loginModal-container">
+		  <div class="modal-header">
+			<h4 class="col-12 modal-title text-center">
+			  Sign In
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</h4>
+		  </div>
+		  <div class="modal-body">
+			<form class="form-signin" id="signin">
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <label for="inputEmail">Email address</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <label for="inputPassword">Password</label>
+              </div>
+
+              <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Remember password</label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+			  <div class="text-center">
+                <p>or </p><a href="#" data-dismiss="modal" data-toggle="modal" id="forgotPassword" data-target="#forgetModal" class="form-check-label">Forget Password</a>
+              </div>              <hr class="my-4">
+              <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fa fa-google mr-2"></i> Sign in with Google</button>
+              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fa fa-facebook-f mr-2"></i> Sign in with Facebook</button>
+			  <br>
+              <div class="text-center">
+				<p>Don't have account? <a href="#" data-dismiss="modal" data-toggle="modal" id="register" data-target="#registerModal" class="form-check-label">Register Now</a>
+				</p>
+              </div>
+			  <br>
+            </form>
+		  </div>
+		  <!--<div class="modal-footer">
+			<button class="btn btn-lg btn-primary text-uppercase" type="submit">Register</button>
+		  </div>-->
+
+		</div>
+
+	  </div>
+	</div>
+	<!------------------register-------------------->
+		<div id="registerModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog modal-dialog-centered">
+
+		<!-- Modal content-->
+		<div class="modal-content" id="loginModal-container">
+		  <div class="modal-header">
+			<h4 class="col-12 modal-title text-center">
+			  Register
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</h4>
+		  </div>
+		  <div class="modal-body">
+			<form class="form-signin">
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <label for="inputPassword">User Name</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <label for="inputEmail">Email address</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <label for="inputPassword">Password</label>
+              </div>
+
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+			  <br>
+            </form>
+		  </div>
+		  <!--<div class="modal-footer">
+
+		  </div>-->
+		</div>
+
+	  </div>
+	</div>
+
+	<!-- forget password -->
+	<div id="forgetModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog modal-dialog-centered">
+
+		<!-- Modal content-->
+		<div class="modal-content" id="loginModal-container">
+		  <div class="modal-header">
+			<h4 class="col-12 modal-title text-center">
+			  Forget Password
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</h4>
+		  </div>
+		  <div class="modal-body">
+			<p>
+				You will get a link on your registered e-mail.
+			</p>
+			<form class="form-signin">
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <label for="inputEmail">Email address</label>
+              </div>
+
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Submit</button>
+			  <br>
+            </form>
+		  </div>
+		  <!--<div class="modal-footer">
+
+		  </div>-->
+		</div>
+
+	  </div>
+	</div>
+
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/google-charts/loader.js"></script>
+  <script type="text/javascript" src="assets/scripts/main.js"></script>
+  <script type="text/javascript">
+/*  google.load("visualization", "1", {
+    packages: ["corechart"]
+	});
+
+	google.setOnLoadCallback(drawChart);
+	var parentWidth = document.getElementById("completed").clientWidth;
+	function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Volume');
+    data.addColumn('number', 'Mortgage Volume');
+    data.addRows([
+        ['A', 10000],
+        ['B', 0,]
+        ]);
+    var options = {
+        title:'Overall Score',
+        width: parentWidth*.9,
+		height: parentWidth,
+        colors: ['silver','#f5f5f5'],
+       pieSliceText:'none',
+       pieHole: 0.70,    
+                 legend: 'none',
+        //legend: { position: 'labeled' },
+       slices: {  1: {offset: 0.05},
+          },
+                 tooltip : {trigger: 'none'},
+        animation: {duration:800,easing:'in'}
+    };
+    var chart = new google.visualization.PieChart(document.getElementById('completed'));
+    chart.draw(data, options);
+	var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+	text.innerHTML="10%"
+	document.getElementById("completed").childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[3].appendChild(text)
+	document.getElementById("completed").childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[3].childNodes[1].setAttribute("x","90")
+	document.getElementById("completed").childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[3].childNodes[1].setAttribute("y","120")
+	document.getElementById("completed").childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[3].setAttribute("transform","translate(0,22)")
+	document.getElementById("completed").childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[2].childNodes[0].setAttribute("font-size","15")
+}*/
+  </script>
+</html>

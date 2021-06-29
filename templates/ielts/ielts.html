@@ -1,0 +1,165 @@
+{% extends 'ielts/base_ielts.html' %}
+
+{% block block_ielts %}
+
+<div class="col-md-9">
+<div class="container" style="background-color:white;border:1px white solid; border-radius:10px;">
+    <div class="row" style="padding-top:20px; padding-bottom:20px;">
+      <div class="col-sm-12">
+        <div class="h3" style="text-align:center;">
+          Test Series
+        </div>
+      </div>
+
+
+      {% for test in tests %}
+      <div class="col-md-4 h-100 d-inline-block" style="height:100%;" onresize="onResize()">
+        <div class="moduleContainer">
+            <div style="text-align:center" class="module-header">
+                {{test.name}}
+            </div>
+            <br>
+            <div class="module-text">
+                <p style="padding:5px;" class="ielts-part">
+                {{test.description}}
+                </p>
+                <a class="btn btn-sm btn-module" href="{% url 'ielts_test' test.mid %}">
+                View Details
+                </a>
+                <br>
+                <br>
+            </div>
+        </div>
+      </div>
+      {% endfor %}
+
+      <div class="col-md-3">
+      </div>
+
+      {% for full_test in full_tests %}
+      <div class="col-md-6">
+        <div class="moduleContainer">
+            <div style="text-align:center" class="module-header">
+            {{full_test.name}}
+            </div>
+            <br>
+            <div class="module-text">
+            <p style="padding:5px;">
+                {{full_test.description}}
+            </p>
+             <a class="btn btn-sm btn-module" href="{% url 'ielts_fulltest' full_test.fid %}">
+                View Details
+                </a>
+            <br>
+            <br>
+            </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <br>
+
+  </div>
+
+  <!-- ############################################################################# -->
+
+  <div class="col-md-3">
+		<div class="paymentContainer" style="">
+		  <div style="text-align:center;" class="payment-header">
+			<div class="h3">
+			  Pay and Unlock
+			</div>
+		  </div>
+		  <br>
+		  <div class="module-text" style="border-radius:0px 0px 5px 5px;">
+			<div class="row">
+			  <div class="col-sm-6">
+				IELTS Fee:
+			  </div>
+			  <div class="col-sm-6" style="text-align:right">
+				1200
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-sm-6">
+				Discount:
+			  </div>
+			  <div class="col-sm-6" style="text-align:right">
+				1200
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-sm-12 coupon">
+				add
+			  </div>
+			  <div class="col-12 coupon">
+        <p class="mb-n1">Coupon</p>
+          <form action="course/total/" method="post">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-8">
+                <input type="hidden" name="course" value="{{course.name}}">
+                <input type="text" class="form-control" name="coupon" placeholder="Enter coupon name" required>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-light" type="submit">Apply</button>
+              </div>
+            </div>
+          </form>
+			  </div>
+			</div>
+			<hr>
+			<div class="row">
+			  <div class="col-sm-6">
+				<b>Grand Total:	</b>
+			  </div>
+			  <div class="col-sm-6" style="text-align:right">
+				<b>1200</b>
+			  </div>
+			</div>
+			<br>
+		  </div>
+		</div>
+		<br>
+	  
+	  <div class="container" style="background-color:white;border:1px white solid; border-radius:10px;padding:10px;box-shadow: 1px 1px 10px rgba(0,0,0,.3);">
+		<div class="row">
+		  <div class="col-sm-12 text-center">
+			<div class="col-sm-12">
+				<span class="h3"><i class="fa fa-bolt" aria-hidden="true"></i> Streek</span>
+				<span style="text-align:right;"><i class="fa fa-info-circle info-icon" title="No of days worked"></i></span>
+			</div>
+			<div class="col-sm-12">
+				<div style="background-color:#6b1cb5;color:white; border-radius:5px; padding:10px;">
+					<b>2 Days</b>
+				</div>
+			</div>
+
+		</div>
+		  
+	  </div></div>
+	  <br>
+	  <div class="container" style="background-color:white;border:1px white solid; border-radius:10px;padding:10px; text-align:center;box-shadow: 1px 1px 10px rgba(0,0,0,.3);">
+		<div class="row">
+		  <div class="col-sm-12 h3">
+		    Result
+		  </div>
+		  <div class="col-sm-12">
+		    40%
+		  </div>
+		  <div class="col-sm-12">
+			<button class="btn btn-light" onclick="window.location='overallResult.html'" style="background-color:#6b1cb5;color:white">
+			  Overall Result
+			</button>
+		  </div>
+		</div>
+	  </div>
+	  <br>
+	</div>
+	</div>
+	</div>
+	<br>
+
+{% endblock block_ielts %}

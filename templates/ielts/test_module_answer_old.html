@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>SkillSwings</title>
+	<link href="assets/img/logo.jpeg" rel="icon">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link href="{% static 'css/main.css' %}" rel="stylesheet">
+	<style>
+	.base-timer {
+	  position: relative;
+	  width: 100%;
+	}
+
+	.base-timer__svg {
+	  transform: scaleX(-1);
+	}
+
+	.base-timer__circle {
+	  fill: none;
+	  stroke: none;
+	}
+
+	.base-timer__path-elapsed {
+	  stroke-width: 7px;
+	  stroke: grey;
+	}
+
+	.base-timer__path-remaining {
+	  stroke-width: 7px;
+	  stroke-linecap: round;
+	  transform: rotate(90deg);
+	  transform-origin: center;
+	  transition: 1s linear all;
+	  fill-rule: nonzero;
+	  stroke: currentColor;
+	}
+
+	.base-timer__path-remaining.green {
+	  color: rgb(65, 184, 131);
+	}
+
+	.base-timer__path-remaining.orange {
+	  color: orange;
+	}
+
+	.base-timer__path-remaining.red {
+	  color: red;
+	}
+
+	.base-timer__label {
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  top: 0;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  font-size: 48px;
+	}
+	footer {
+	  position: fixed;
+	  padding:10px;
+	  bottom: 0;
+	  width: 100%;
+	  background-color: #6b1cb5;
+	  color: white;
+	}
+	</style>
+  </head>
+  <body>
+	<!------------	module page	------------->
+	<div style="background-color:#6b1cb5;color:white;padding:10px;">
+	  <span class="h3">
+		Module Name
+	  </span>
+	  <button class="btn btn-sm float-right" style="background-color:white;" id="stop">
+		<b>Next Question</b>
+	  </button>
+	</div>
+	<br>
+    <div class="container" style="">
+	  <div class="row" style="">
+		<div class="col-sm-12 bg-white row" style="padding:20px;border-radius:10px;">
+		<div class="col-sm-8" style="margin:0 auto;position:relative;">
+		  <div style="margin:0 auto;text-align:center;padding:15% 0;">
+		    <h2 id="quest">Q1. This is your question?</h2>
+		  </div>
+		</div>
+		<div class="col-sm-4">
+		  <div style="margin:0 auto;">
+		    <div id="app" style="margin:0 auto;padding-bottom:20px;"></div>
+		  </div>
+		  <div class="Blink" id="microphone" style="text-align:center;display:none;">
+			<h2>
+			  <i class="fa fa-microphone" aria-hidden="true"></i>
+			</h2>
+		  </div>
+		  <div class="Blink" id="speaker" style="text-align:center;">
+			<h2>
+			  <i class="fa fa-volume-up" aria-hidden="true"></i>
+			</h2>
+		  </div>
+		</div>
+		</div>
+	  </div>
+	</div>
+	<form style="display:none">
+		<div id="audio">
+		</div>
+	</form>
+	<br>
+	<footer>
+		<h3>test</h3>
+	</footer>
+  </body>
+	<!------------------------login modal------------------------------>
+  <!-- <script src="assets/vendor/jquery/jquery.min.js"></script> -->
+  <script type="text/javascript" src="{% static 'scripts/main.js' %}"></script>
+  <script type="text/javascript" src="{% static 'scripts/ansPage.js' %}"></script>
+  <script>
+
+var device = navigator.mediaDevices.getUserMedia({audio:true});
+var item = [];
+var audio = document.getElementById('audio');
+var qno = 1;
+var temp_blob;
+
+  var qtn = [];
+  function getQuestion(param) {
+    return $.ajax({
+        type : 'GET',
+        url  : '/ielts/getquestions/b2b35f46-eab0-49d7-845b-bac3086e8da4'
+    });
+}
+
+ qtn = getQuestion();
+ console.log(qtn);
+
+
+
+
+function recording(time)
+{
+device.then(stream=>{
+	var record=new MediaRecorder(stream);
+	var blob = new Blob(item, {type:'audio/webm'});
+	console.log("line 1");
+	record.ondataavailable = e=>{
+		item.push(e.data);
+		if(record.state='inactive')
+		{
+			var mainaudio = document.createElement('audio');
+			mainaudio.setAttribute('controls','controls');
+			audio.appendChild(mainaudio);
+      temp_blob = blob;
+			mainaudio.innerHTML = '<source id="myaudioelement'+qno+'" src="'+URL.createObjectURL(blob)+'" type="video/webm"/>';
+		}
+    else {
+      var mainaudio = document.createElement('audio');
+			mainaudio.setAttribute('controls','controls');
+			audio.appendChild(mainaudio);
+      temp_blob = blob;
+			mainaudio.innerHTML = '<source id="myaudioelement'+qno+'" src="'+URL.createObjectURL(blob)+'" type="video/webm"/>';
+    }
+	}
+	console.log("line 2 " +time);
+	record.start(time)
+	{
+		setTimeout(()=>{
+			record.stop();
+			submit(blob);
+		},time);
+	}
+	console.log("line 3");
+});
+}
+function submit(blob)
+{
+	// console.log("testing");
+  // var fd = new FormData();
+  // fd.append(
+  //   'audio',
+  //   blob,
+  //   'audio.webm'
+  // )
+  // fd.append("testaudio", "b2b35f46eab049d7845bbac3086e8da4")
+	//todo submit the form
+  //   $.ajax({
+	// 	type: "POST",
+	// 	url: "/ielts/audio/",
+	// 	data: fd,
+  //   success: function (msg) {
+  //     console.log(msg)
+  //   }
+	// });
+
+  var xhr = new XMLHttpRequest();
+    xhr.onload = function(e) {
+        if (this.readyState === 4) {
+            console.log("Server returned: ", e.target.responseText);
+        }
+    };
+    var fd = new FormData();
+    fd.append("audio", blob, 'audio.webm');
+    fd.append("testaudio", "b2b35f46eab049d7845bbac3086e8da4")
+    xhr.open("POST", "/ielts/audio/", true);
+    xhr.setRequestHeader('xsrfCookieName', 'csrftoken');
+    xhr.setRequestHeader('xsrfHeaderName', 'X-CSRFToken');
+    xhr.send(fd);
+
+	// audio.innerHTML="";
+	qno = qno+1;
+  // question(questionNo,"What is your fathers Name?",10);
+  if (qtn.responseJSON[qno-1] !== undefined){
+    question(qno, qtn.responseJSON[qno-1].question, qtn.responseJSON[qno-1].time);
+  } else {
+    // window.location = '/';
+  }
+}
+// question(qno, qtn.responseJSON[qno-1].question, qtn.responseJSON[qno-1].time);
+// question(qno, qtn['responseJSON'][0]['question'], qtn['responseJSON'][0]['time'])
+
+device.then(function(stream) {
+  question(qno, qtn.responseJSON[qno-1].question, qtn.responseJSON[qno-1].time);
+
+  var record=new MediaRecorder(stream);
+	var blob = new Blob(item, {type:'audio/webm'});
+	console.log("line 1");
+	record.ondataavailable = e=>{
+    item.push(e.data);
+
+    if(record.state='inactive')
+		{
+			var mainaudio = document.createElement('audio');
+			mainaudio.setAttribute('controls','controls');
+			audio.appendChild(mainaudio);
+      temp_blob = blob;
+			mainaudio.innerHTML = '<source id="myaudioelement'+qno+'" src="'+URL.createObjectURL(blob)+'" type="video/webm"/>';
+		}
+  }
+	console.log("line 2 " +time);
+	record.start(1)
+	{
+		setTimeout(()=>{
+			record.stop();
+		},1);
+	}
+});
+
+  </script>
+
+</html>

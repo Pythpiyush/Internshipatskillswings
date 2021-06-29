@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>SkillSwings</title>
+	<link href="assets/img/logo.jpeg" rel="icon">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link href="{% static 'css/main.css' %}" rel="stylesheet">
+	<style>
+	.base-timer {
+	  position: relative;
+	  width: 100%;
+	}
+
+	.base-timer__svg {
+	  transform: scaleX(-1);
+	}
+
+	.base-timer__circle {
+	  fill: none;
+	  stroke: none;
+	}
+
+	.base-timer__path-elapsed {
+	  stroke-width: 7px;
+	  stroke: grey;
+	}
+
+	.base-timer__path-remaining {
+	  stroke-width: 7px;
+	  stroke-linecap: round;
+	  transform: rotate(90deg);
+	  transform-origin: center;
+	  transition: 1s linear all;
+	  fill-rule: nonzero;
+	  stroke: currentColor;
+	}
+
+	.base-timer__path-remaining.green {
+	  color: rgb(65, 184, 131);
+	}
+
+	.base-timer__path-remaining.orange {
+	  color: orange;
+	}
+
+	.base-timer__path-remaining.red {
+	  color: red;
+	}
+
+	.base-timer__label {
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  top: 0;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  font-size: 48px;
+	}
+	footer {
+	  position: fixed;
+	  padding:10px;
+	  bottom: 0;
+	  width: 100%;
+	  background-color: #6b1cb5;
+	  color: white;
+	}
+	</style>
+  </head>
+  <body>
+	<!------------	module page	------------->
+	<div style="background-color:#6b1cb5;color:white;padding:10px;">
+	  <span class="h3">
+		Module Name
+	  </span>
+	  <button class="btn btn-sm float-right" style="background-color:white;" id="stop">
+		<b>Next Question</b>
+	  </button>
+	</div>
+	<br>
+    <div class="container" style="">
+	  <div class="row" style="">
+		<div class="col-sm-12 bg-white row" style="padding:20px;border-radius:10px;">
+		<div class="col-sm-6" style="margin:0 auto;position:relative;">
+		  <div style="margin:0 auto;text-align:center;padding:15% 0;">
+		    <h2 id="quest">Q1. This is your question?</h2>
+		  </div>
+		</div>
+		<div class="col-sm-6">
+		  <div style="margin:0 auto;">
+		    <div class="video1">
+				<video autoplay="true" id="viewVideo" style="width:100%">
+				</video>
+			</div>
+		  </div>
+		  <div class="Blink" id="microphone" style="text-align:center;display:none;">
+			<h2>
+			  <i class="fa fa-microphone" aria-hidden="true"></i>
+			</h2>
+		  </div>
+		  <div class="Blink" id="speaker" style="text-align:center;">
+			<h2>
+			  <i class="fa fa-volume-up" aria-hidden="true"></i>
+			</h2>
+		  </div>
+		</div>
+		</div>
+	  </div>
+	</div>
+	<form style="display:none">
+		<div id="video">
+		</div>
+	</form>
+	<br>
+	<footer>
+		<h3>test</h3>
+	</footer>
+  </body>
+	<!------------------------login modal------------------------------>
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'scripts/main.js' %}"></script>
+  <script type="text/javascript" src="{% static 'scripts/ansPageOverall.js' %}"></script>
+
+
+  <script>
+
+  /*
+let preview = document.getElementById("preview");
+let recording = document.getElementById("recording");
+
+let stopButton = document.getElementById("stopButton");
+let downloadButton = document.getElementById("downloadButton");
+//let logElement = document.getElementById("log");
+
+let recordingTimeMS = 600000;
+function log(msg) {
+  //logElement.innerHTML += msg + "\n";
+  window.location.href = "modulepage.html";
+}
+function wait(delayInMS) {
+  return new Promise(resolve => setTimeout(resolve, delayInMS));
+}
+/*function startRecording(stream, lengthInMS) {
+  let recorder = new MediaRecorder(stream);
+  let data = [];
+
+  recorder.ondataavailable = event => data.push(event.data);
+  recorder.start();
+
+  let stopped = new Promise((resolve, reject) => {
+    recorder.onstop = resolve;
+    recorder.onerror = event => reject(event.name);
+  });
+
+  let recorded = wait(lengthInMS).then(
+    () => recorder.state == "recording" && recorder.stop()
+  );
+
+  return Promise.all([
+    stopped,
+    recorded
+  ])
+  .then(() => data);
+}
+
+function stop(stream) {
+  stream.getTracks().forEach(track => track.stop());
+}
+window.addEventListener("load", function() {
+  navigator.mediaDevices.getUserMedia({
+    video: true,
+    audio: true
+  }).then(stream => {
+    preview.srcObject = stream;
+    downloadButton.href = stream;
+    preview.captureStream = preview.captureStream || preview.mozCaptureStream;
+    return new Promise(resolve => preview.onplaying = resolve);
+  }).then(() => startRecording(preview.captureStream(), recordingTimeMS))
+  .then (recordedChunks => {
+    let recordedBlob = new Blob(recordedChunks, { type: "video/webm" });
+    recording.src = URL.createObjectURL(recordedBlob);
+    downloadButton.href = recording.src;
+    downloadButton.download = "RecordedVideo.webm";
+
+  })
+  .catch(log);
+  //setTimeout(function(){ stopButton.click(); }, 60000);
+
+}, false);
+stopButton.addEventListener("click", function() {
+  stop(preview.srcObject);
+}, false);*/
+
+var device = navigator.mediaDevices.getUserMedia({video:true,audio:true});
+var item = [];
+var qtn = [];
+var qno = 1;
+function getQuestion(param)
+{
+	let que_id = window.location.href.split('/').slice(-2)[0];
+    return $.ajax({
+        type : 'GET',
+        url  : `/ielts/getfullquestions/${que_id}/`
+    });
+}
+qtn = getQuestion();
+
+var viewVideo = document.querySelector("#viewVideo");
+    // Not adding `{ audio: true }` since we only want video now
+device.then(function(stream) {
+    //video.src = window.URL.createObjectURL(stream);
+	viewVideo.muted=true;
+	viewVideo.srcObject =stream;
+	viewVideo.play();
+    question(qtn.responseJSON[qno-1].question, qtn.responseJSON[qno-1].time);
+    console.log("testing 1234566");
+});
+function recording(time)
+{
+device.then(stream=>{
+	var record=new MediaRecorder(stream);
+	console.log("line 1");
+	record.ondataavailable = e=>{
+		item.push(e.data);
+		if(record.state='inactive')
+		{
+			var blob = new Blob(item, {type:'audio/webm'});
+			var video = document.getElementById('video');
+			var mainaudio = document.createElement('video');
+			mainaudio.setAttribute('controls','controls');
+			video.appendChild(mainaudio);
+			mainaudio.innerHTML = '<source src="'+URL.createObjectURL(blob)+'" type="video/webm"/>';
+			submit(blob);
+		}
+	}
+	console.log("line 2 " +time);
+	record.start(time)
+	{
+
+		setTimeout(()=>{
+			record.stop();
+		},time);
+	}
+	console.log("line 3");
+	/*var stop = document.getElementById("stop");
+	stop.addEventListener('click', function (ev) {
+		record.stop();
+		submit();
+	});*/
+});
+}
+function submit(blob)
+{
+	console.log("testing");
+	//todo submit the form
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function(e) {
+        if (this.readyState === 4) {
+            console.log("Server returned: ", e.target.responseText);
+        }
+    };
+    //    var blob = new Blob(item, {type:'audio/webm'});
+    var fd = new FormData();
+    fd.append("video", blob, 'video.webm');
+    fd.append("testaudio", "b2b35f46eab049d7845bbac3086e8da4");
+    xhr.open("POST", "/ielts/audio/", true);
+    xhr.setRequestHeader('xsrfCookieName', 'csrftoken');
+    xhr.setRequestHeader('xsrfHeaderName', 'X-CSRFToken');
+    xhr.send(fd);
+	// audio.innerHTML="";
+	qno = qno+1;
+    // question(questionNo,"What is your fathers Name?",10);
+    if (qtn.responseJSON[qno-1] !== undefined){
+        console.log("question number is :"+qno);
+        question(qtn.responseJSON[qno-1].question, qtn.responseJSON[qno-1].time);
+    }
+    else
+    {
+        window.location = '/ielts/result/';
+    }
+}
+  </script>
+
+</html>

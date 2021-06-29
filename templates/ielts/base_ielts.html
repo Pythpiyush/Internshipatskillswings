@@ -1,0 +1,44 @@
+{% extends 'baseIndex.html' %}
+
+{% block baseindex %}
+
+<div style="background-color:black; color:white;padding:10px; max-height:60vh;">
+  <div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+    <br>
+    <div style="color:blue;">
+      ><a href="courses.html"> COURSES</a>
+    </div>
+    <br>
+    <div class="h2" style="margin:5px;">
+      {{course.name}}
+    </div>
+    <div>
+      {{course.description}}
+    </div>
+    <br>
+    <div>
+      <button class="btn" style="color:white;border-color:white">
+      Pay and unlock
+      </button>
+    </div>
+    </div>
+    <div class="col-sm-3">
+      <img src="{{course.course_image.url}}" class="rounded img-fluid"/>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+  <br>
+  <div class="">
+  <div class="row" style="padding-top:30px;margin:0px;">
+  
+{% block block_ielts %}
+
+{% endblock block_ielts %}
+
+
+{% endblock baseindex %}

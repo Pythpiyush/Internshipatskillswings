@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h2>Profile page</h2>
+
+<p>{{user.email}}</p>
+<p>{{user.first_name}} {{request.user.last_name}}</p>
+
+<form method="Post">
+    {% csrf_token %}
+    <button type="submit" >Enroll to course </button>
+</form>
+
+<h3>Enrolled courses</h3>
+
+<ol>
+{% for course in courses %}
+    <li>{{ course.name }}</li>
+{% endfor %}
+</ol>
+
+
+<img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" />
+
+{% endblock content %}

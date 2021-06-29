@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% if not user.is_authenticated %}
+    {% include 'partials/loginmodal.html' %}
+{% endif %}
+
+{% if not user.is_authenticated %}
+    {% include 'partials/registrationmodal.html' %}
+{% endif %}
+
+{% if not user.is_authenticated %}
+    {% include 'partials/forgetpasswordmodal.html' %}
+{% endif %}
+
+{% block baseindex %}
+
+{% endblock baseindex %}
+
+{% endblock content %}

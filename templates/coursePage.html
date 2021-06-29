@@ -1,0 +1,327 @@
+{% extends 'baseIndex.html' %}
+
+{% block baseindex %}
+	<div style="background-color:black; color:white;padding:10px; height:60vh;">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-sm-9">
+			<br>
+			<div style="color:blue;">
+				><a href="courses.html"> COURSES</a>
+			</div>
+			<br>
+			<div class="h2" style="margin:5px;">
+			  {{course.name}}
+			</div>
+			<div>
+			  Check your {{course.name}} skills here
+			</div>
+			<br>
+			<div>
+			  <button class="btn" style="color:white;border-color:white">
+				Pay and unlock
+			  </button>
+			</div>
+		  </div>
+		  <div class="col-sm-3">
+			<img src="assets/img/logo.jpeg" class="img-fluid"/>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<br>
+	<div class="">
+	<div class="row" style="padding-top:30px;margin:0px;">
+	<div class="col-md-9">
+    <!-- <div class="container" style="background-color:white;border:1px white solid; border-radius:10px;"> -->
+	   <!-- <div class="row" style="padding:10px;"> -->
+	  <!-- <div class="row" style="padding-top:20px; padding-bottom:20px;"> -->
+		<!-- <div class="col-sm-12"> -->
+		  <!-- <div class="h3" style="text-align:center;"> -->
+		    <!-- What You'll Learn -->
+		  <!-- </div> -->
+		<!-- </div> -->
+		<!-- <div class="col-md-4"> -->
+		<!-- <div class="moduleContainer"> -->
+		  <!-- <div style="" class="module-header"> -->
+			<!-- What is IELTS About? -->
+		  <!-- </div> -->
+		  <!-- <br> -->
+		  <!-- <div class="module-text"> -->
+		    <!-- <p> -->
+			  <!-- Complete(0/1) -->
+			<!-- </p> -->
+			<!-- <button class="btn btn-sm btn-module" onclick="window.location='info.html'"> -->
+			  <!-- View Details -->
+			<!-- </button> -->
+			<!-- <br> -->
+			<!-- <br> -->
+		  <!-- </div> -->
+		  <!-- </div> -->
+		<!-- </div> -->
+		<!-- <div class="col-md-4"> -->
+		<!-- <div class="moduleContainer"> -->
+		  <!-- <div style="" class="module-header"> -->
+			<!-- What is IELTS About? -->
+		  <!-- </div> -->
+		  <!-- <br> -->
+		  <!-- <div class="module-text"> -->
+		    <!-- <p> -->
+			  <!-- Complete(0/1) -->
+			<!-- </p> -->
+			<!-- <button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'"> -->
+			  <!-- View Details -->
+			<!-- </button> -->
+			<!-- <br> -->
+			<!-- <br> -->
+		  <!-- </div> -->
+		  <!-- </div> -->
+		<!-- </div> -->
+		<!-- <div class="col-md-4"> -->
+		<!-- <div class="moduleContainer"> -->
+		  <!-- <div style="" class="module-header"> -->
+			<!-- What is IELTS About? -->
+		  <!-- </div> -->
+		  <!-- <br> -->
+		  <!-- <div class="module-text"> -->
+		    <!-- <p> -->
+			  <!-- Complete(0/1) -->
+			<!-- </p> -->
+			<!-- <button class="btn btn-sm btn-module" onclick="window.location='ansPage.html'"> -->
+			  <!-- View Details -->
+			<!-- </button> -->
+			<!-- <br> -->
+			<!-- <br> -->
+		  <!-- </div> -->
+		  <!-- </div> -->
+		<!-- </div> -->
+	  <!-- </div> -->
+	<!-- </div> -->
+	<!-- <br> -->
+    <div class="container" style="background-color:white;border:1px white solid; border-radius:10px;">
+	  <!-- <div class="row" style="padding:10px;"> -->
+	  <div class="row" style="padding-top:20px; padding-bottom:20px;">
+		<div class="col-sm-12">
+		  <div class="h3" style="text-align:center;">
+		    Test Series
+		  </div>
+		</div>
+	  	{% for test in tests %}
+		<div class="col-md-4 h-100 d-inline-block" style="height:100%;" onresize="onResize()">
+		<div class="moduleContainer">
+		  <div style="text-align:center" class="module-header">
+			{{ test.name }}
+		  </div>
+		  <br>
+		  <div class="module-text">
+		    <p style="padding:5px;" class="ielts-part">
+			 {{ test.description }}
+			</p>
+			  <a class="btn btn-primary" href="test/{{test.mid}}"> View Tests </a>
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='partWiseQuestion1.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+			<br>
+			<br>
+		  </div>
+		  </div>
+		</div>
+		  {% endfor %}
+<!--		<div class="col-md-4 h-100 d-inline-block">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="text-align:center" class="module-header">-->
+<!--			IELTS Speaking Part-2-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p style="padding:5px;" class="ielts-part">-->
+<!--			   You will be given a task card on a particular topic, and this will include key points that you should talk about.-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='partWiseQuestion2.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-md-4 h-100 d-inline-block">-->
+<!--		<div class="moduleContainer">-->
+<!--		  <div style="text-align:center" class="module-header" onload="onResize();">-->
+<!--			IELTS Speaking Part-3-->
+<!--		  </div>-->
+<!--		  <br>-->
+<!--		  <div class="module-text">-->
+<!--		    <p style="padding:5px;" class="ielts-part">-->
+<!--			  You will have a longer discussion about the topic introduced in Part 2.-->
+<!--			</p>-->
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='partWiseQuestion3.html'" style="position:relative;bottom:0">-->
+<!--			  View Details-->
+<!--			</button>-->
+<!--			<br>-->
+<!--			<br>-->
+<!--		  </div>-->
+<!--		  </div>-->
+<!--		</div>-->
+<!--		<div class="col-md-3">-->
+<!--		</div>-->
+		{% for test in fulltests %}
+		<div class="col-md-6">
+		<div class="moduleContainer">
+		  <div style="text-align:center" class="module-header">
+			{{ test.name }}
+		  </div>
+		  <br>
+		  <div class="module-text">
+		    <p style="padding:5px;">
+			{{ test.description }}
+			</p>
+<!--			<button class="btn btn-sm btn-module" onclick="window.location='fullTestSeries.html'">-->
+<!--			  View Details-->
+<!--			</button>-->
+			  <a class="btn btn-primary" href="fulltest/{{test.fid}}"> View Details</a>
+			<br>
+			<br>
+		  </div>
+		</div>
+		</div>
+		  {% endfor %}
+	  </div>
+	</div>
+	<br>
+
+	</div>
+	<div class="col-md-3">
+		<div class="paymentContainer" style="">
+		  <div style="text-align:center;" class="payment-header">
+			<div class="h3">
+			  Pay and Unlock
+			</div>
+		  </div>
+		  <br>
+		  <div class="module-text" style="border-radius:0px 0px 5px 5px;">
+			<div class="row">
+			  <div class="col-sm-6">
+				IELTS Fee:
+			  </div>
+			  <div class="col-sm-6" style="text-align:right">
+				1200
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-sm-6">
+				Discount:
+			  </div>
+			  <div class="col-sm-6" style="text-align:right">
+				1200
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-sm-12 coupon">
+				add
+			  </div>
+			  <div class="col-8 coupon">
+				<input type="text" name="coupon">
+			  </div>
+			  <div class="col-4 coupon">
+				apply
+			  </div>
+			  <div class="col-sm-6">
+				Coupon Code
+			  </div>
+			  <div class="col-sm-6" style="text-align:right">
+				code
+			  </div>
+			</div>
+			<hr>
+			<div class="row">
+			  <div class="col-sm-6">
+				<b>Grand Total:	</b>
+			  </div>
+			  <div class="col-sm-6" style="text-align:right">
+				<b>1200</b>
+			  </div>
+			</div>
+			<br>
+		  </div>
+		</div>
+		<br>
+	  <!-- <div class="container" style="border:1px white solid; border-radius:10px;padding:10px;background-color:white;"> -->
+		<!-- <div class="row"> -->
+		  <!-- <div class="col-sm-12 h4" style="text-align:center;"> -->
+		    <!-- Pay and Unlock -->
+		  <!-- </div> -->
+		<!-- </div> -->
+		<!-- <hr> -->
+		<!-- <div class="row"> -->
+		  <!-- <div class="col-sm-6"> -->
+			<!-- IELTS Fee: -->
+		  <!-- </div> -->
+		  <!-- <div class="col-sm-6" style="text-align:right"> -->
+		    <!-- 1200 -->
+		  <!-- </div> -->
+		<!-- </div> -->
+		<!-- <div class="row"> -->
+		  <!-- <div class="col-sm-6"> -->
+			<!-- IELTS Fee: -->
+		  <!-- </div> -->
+		  <!-- <div class="col-sm-6" style="text-align:right"> -->
+		    <!-- 1200 -->
+		  <!-- </div> -->
+		<!-- </div> -->
+		<!-- <hr> -->
+		<!-- <div class="row"> -->
+		  <!-- <div class="col-sm-6"> -->
+			<!-- <b>Grand Total:</b> -->
+		  <!-- </div> -->
+		  <!-- <div class="col-sm-6" style="text-align:right"> -->
+		    <!-- <b>1200</b> -->
+		  <!-- </div> -->
+		<!-- </div> -->
+	  <!-- </div> -->
+	  <!-- <br> -->
+	  <div class="container" style="background-color:white;border:1px white solid; border-radius:10px;padding:10px;box-shadow: 1px 1px 10px rgba(0,0,0,.3);">
+		<div class="row">
+		  <div class="col-sm-12 text-center">
+			<div class="col-sm-12">
+				<span class="h3"><i class="fa fa-bolt" aria-hidden="true"></i> Streek</span>
+				<span style="text-align:right;"><i class="fa fa-info-circle info-icon" title="No of days worked"></i></span>
+			</div>
+			<div class="col-sm-12">
+				<div style="background-color:#6b1cb5;color:white; border-radius:5px; padding:10px;">
+					<b>2 Days</b>
+				</div>
+			</div>
+
+		</div>
+		  <!--<div id="completed"></div>
+		  </div>
+			<div id="center">
+				<font style="color:red;font-weight: bold;font: 18px arial, sans-serif;">$186,000,000</font>
+				<BR>
+				<font style="color:grey;font: 14px arial, sans-serif;">92% to Target</font></div>
+			</div>
+		  </div>-->
+	  </div></div>
+	  <br>
+	  <div class="container" style="background-color:white;border:1px white solid; border-radius:10px;padding:10px; text-align:center;box-shadow: 1px 1px 10px rgba(0,0,0,.3);">
+		<div class="row">
+		  <div class="col-sm-12 h3">
+		    Result
+		  </div>
+		  <div class="col-sm-12">
+		    40%
+		  </div>
+		  <div class="col-sm-12">
+			<button class="btn btn-light" onclick="window.location='overallResult.html'" style="background-color:#6b1cb5;color:white">
+			  Overall Result
+			</button>
+		  </div>
+		</div>
+	  </div>
+	  <br>
+	</div>
+	</div>
+	</div>
+	<br>
+{% endblock baseindex %}
